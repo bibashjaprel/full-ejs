@@ -1,0 +1,16 @@
+{
+  "name": "full-ejs",
+  "version": "1.0.0",
+  "description": "using ejs",
+  "license": "ISC",
+  "author": "Bibash Japrel",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
