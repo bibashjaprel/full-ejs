@@ -33,6 +33,22 @@ app.post('/login', (req, res) => {
   }
 });
 
+
+app.get('/forgot-password', (req, res) => {
+  res.render('forgot-password'); // Render the improved forgot-password.ejs
+});
+
+app.post('/forgot-password', (req, res) => {
+  const { email } = req.body;
+  if (email) {
+    res.send('Password reset link sent to your email!');
+  } else {
+    res.send('Please provide a valid email address');
+  }
+  console.log(`Email: ${email}`);
+});
+
+
 app.get('/signup', (req, res) => {
   res.render('signup');
 });
