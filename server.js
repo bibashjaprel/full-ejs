@@ -4,6 +4,10 @@ const app = express();
 dotenv.config();
 const PORT = process.env.PORT || 3000;
 
+
+// Middleware to parse form data
+app.use(express.urlencoded({ extended: true }));
+
 // Set the views directory and view engine
 app.set('views', './views');
 app.set('view engine', 'ejs');
@@ -17,8 +21,30 @@ app.get('/login', (req, res) => {
   res.render('login');
 });
 
+app.post('/login', (req, res) => {
+  const { username, password } = req.body;
+
+  console.log(`Username: ${username}, Password: ${password}`);
+  if (username === 'admin' && password === 'admin') {
+    res.send('Login successful!');
+  }
+  else {
+    res.send('Invalid credentials');
+  }
+});
+
 app.get('/signup', (req, res) => {
   res.render('signup');
+});
+
+app.post('/signup', (req, res) => {
+  const { fullname, username, password, confirmPassword } = req.body;
+  console.log(`Full Name: ${fullname}, Username: ${username}, Password: ${password}, Confirm Password: ${confirmPassword}`);
+  if (password === confirmPassword) {
+    res.send('Signup successful!');
+  } else {
+    res.send('Passwords do not match');
+  }
 });
 
 app.listen(PORT, () => {
