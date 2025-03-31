@@ -1,14 +1,51 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Signup - </title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Signup</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
-  Signup
+<body class="bg-zinc-900 text-white min-h-screen flex items-center justify-center">
+  <div class="w-full max-w-md bg-zinc-800 rounded-lg shadow-lg p-6">
+    <h1 class="text-4xl font-bold text-center text-clifford mb-6">Signup</h1>
+    <form action="/signup" method="POST" class="space-y-4">
+      <div>
+        <label for="fullname" class="block text-sm font-medium mb-1">Full Name</label>
+        <input type="text" id="fullname" name="fullname" placeholder="Enter your full name"
+          class="w-full p-3 border border-gray-600 rounded bg-zinc-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+          required />
+      </div>
+      <div>
+        <label for="username" class="block text-sm font-medium mb-1">Username</label>
+        <input type="text" id="username" name="username" placeholder="Enter your username"
+          class="w-full p-3 border border-gray-600 rounded bg-zinc-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+          required />
+      </div>
+      <div>
+        <label for="password" class="block text-sm font-medium mb-1">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password"
+          class="w-full p-3 border border-gray-600 rounded bg-zinc-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+          required />
+      </div>
+      <div>
+        <label for="confirm-password" class="block text-sm font-medium mb-1">Confirm Password</label>
+        <input type="password" id="confirm-password" name="confirmPassword" placeholder="Confirm your password"
+          class="w-full p-3 border border-gray-600 rounded bg-zinc-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+          required />
+      </div>
+      <button type="submit"
+        class="w-full bg-blue-500 hover:bg-blue-700 text-white font-medium py-3 rounded transition duration-300">
+        Signup
+      </button>
+    </form>
+    <div class="mt-4 text-center">
+      <p class="text-sm text-gray-400">Already have an account? <a href="/login"
+          class="text-blue-300 hover:underline">Login</a></p>
+    </div>
+  </div>
 </body>
 
 </html>
